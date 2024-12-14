@@ -1,0 +1,352 @@
+{
+    //====================
+    // 编辑器基础设置
+    //====================
+    // 关闭小地图显示
+    "editor.minimap.enabled": false,
+    // 显示所有空白字符
+    "editor.renderWhitespace": "all",
+    // 关闭行内建议
+    "editor.inlineSuggest.suppressSuggestions": true,
+    // 启用自动换行
+    "editor.wordWrap": "on",
+    //====================
+    // 文件处理设置
+    //====================
+    // 删除文件末尾多余的新行
+    "files.trimFinalNewlines": true,
+    // 删除行尾空格
+    "files.trimTrailingWhitespace": true,
+    // 允许打开不受信任的文件
+    "security.workspace.trust.untrustedFiles": "open",
+    //====================
+    // 界面主题设置
+    //====================
+    // 设置颜色主题
+    "workbench.colorTheme": "One Dark Pro Darker",
+    // 设置图标主题
+    "workbench.iconTheme": "vscode-great-icons",
+    //====================
+    // Diff 编辑器设置
+    //====================
+    // 在比较时不忽略空格差异
+    "diffEditor.ignoreTrimWhitespace": false,
+    // 启用隐藏未更改区域
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    // 取消 diff 计算时间限制
+    "diffEditor.maxComputationTime": 0,
+    //====================
+    // 语言特定设置
+    //====================
+    // C/C++ 编译器路径
+    "C_Cpp.default.compilerPath": "D:\\msys64\\ucrt64\\bin\\gcc.exe",
+    // Python 相关设置
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    // C 语言格式化器
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    //====================
+    // Jupyter 代码补全设置
+    //====================
+    "jupyter.completionTriggerCharacters": {
+        "python": [
+            ".",
+            "%",
+            "'",
+            "\""
+        ],
+        "r": [
+            "[",
+            "(",
+            ",",
+            "$",
+            "@",
+            "\"",
+            "'"
+        ],
+        "java": [
+            ".",
+            "@",
+            "#"
+        ],
+        "javascript": [
+            ".",
+            "\"",
+            "'",
+            "/",
+            "@"
+        ],
+        "typescript": [
+            ".",
+            "\"",
+            "'",
+            "/",
+            "@",
+            "<"
+        ],
+        "julia": [
+            "."
+        ],
+        "rust": [
+            ".",
+            ":"
+        ],
+        "bash": [
+            "$",
+            "{"
+        ],
+        "scala": [
+            "."
+        ]
+    },
+    //====================
+    // CMake 设置
+    //====================
+    // 关闭 CMake 选项移动通知
+    "cmake.showOptionsMovedNotification": false,
+    // 关闭调试器配置通知
+    "cmake.showConfigureWithDebuggerNotification": false,
+    // CMake 生成器设置
+    "cmake.generator": "",
+    // CMake 路径设置
+    "cmake.cmakePath": "",
+    // 固定的 CMake 命令
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    //====================
+    // Notebook 设置
+    //====================
+    // 启用笔记本保存时格式化
+    "notebook.formatOnSave.enabled": true,
+    // 笔记本保存时的代码操作
+    "notebook.codeActionsOnSave": {
+        "notebook.source.organizeImports": "explicit"
+    },
+    //====================
+    // LaTeX Workshop 设置
+    //====================
+    // 启用右键菜单
+    "latex-workshop.showContextMenu": true,
+    // 启用包自动补全
+    "latex-workshop.intellisense.package.enabled": true,
+    // 输出目录设置
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    // LaTeX 默认格式化器
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    // 启用构建前创建输出目录
+    "latex-workshop.latex.build.mkdir": true,
+    // 构建失败后清理辅助文件
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    // 使用上次的编译配置
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    // 设置同步键绑定为双击
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    // 启用子文件夹清理
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    // 隐藏错误消息
+    "latex-workshop.message.error.show": false,
+    // 隐藏警告消息
+    "latex-workshop.message.warning.show": false,
+    // 启用 BibTeX 排序
+    "latex-workshop.bibtex-format.sort.enabled": true,
+    // 设置格式化工具
+    "latex-workshop.formatting.latex": "latexindent",
+    // latexindent 参数设置
+    "latex-workshop.formatting.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-y=defaultIndent: '    '",
+        "-m"
+    ],
+    // BibTeX 缩进设置
+    "latex-workshop.bibtex-format.tab": "4 spaces",
+    // 启用 BibTeX 字段排序
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    // LaTeX 编译工具配置
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%OUTDIR%/%DOCFILE%"
+            ],
+            "env": {
+                "TEXMFOUTPUT": "%OUTDIR%"
+            }
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "--output-directory=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    // LaTeX 编译配方
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "PDFLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        },
+        {
+            "name": "LaTeXmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "(xelatex×2 + biber + xelatex×2)",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    // LaTeX 清理文件类型
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz",
+        "*/**/*.aux",
+        "*/**/*.bbl",
+        "*/**/*.blg",
+        "*/**/*.idx",
+        "*/**/*.ind",
+        "*/**/*.lof",
+        "*/**/*.lot",
+        "*/**/*.out",
+        "*/**/*.toc",
+        "*/**/*.acn",
+        "*/**/*.acr",
+        "*/**/*.alg",
+        "*/**/*.glg",
+        "*/**/*.glo",
+        "*/**/*.gls",
+        "*/**/*.ist",
+        "*/**/*.fls",
+        "*/**/*.log",
+        "*/**/*.fdb_latexmk",
+        "*/**/*.snm",
+        "*/**/*.nav",
+        "*/**/*.dvi",
+        "*/**/*.synctex.gz"
+    ],
+    // 设置清理方法为 glob
+    "latex-workshop.latex.clean.method": "glob",
+    //====================
+    // 其他设置
+    //====================
+    // 自定义词典设置
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "name": "custom-dictionary-user",
+            "path": "~/.cspell/custom-dictionary-user.txt",
+            "addWords": true,
+            "scope": "user"
+        }
+    },
+    // 禁用 Red Hat 遥测
+    "redhat.telemetry.enabled": false,
+    // 启用 Ruff 原生服务器
+    "ruff.nativeServer": "on"
+}
