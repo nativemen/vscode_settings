@@ -1,0 +1,244 @@
+{
+    // ===== 编辑器基础设置 =====
+    // 设置编辑器主题
+    "workbench.colorTheme": "One Dark Pro Darker",
+    // 设置文件图标主题
+    "workbench.iconTheme": "vscode-great-icons",
+    // 关闭小地图
+    "editor.minimap.enabled": false,
+    // 显示所有空白字符
+    "editor.renderWhitespace": "all",
+    // 禁用内联建议
+    "editor.inlineSuggest.suppressSuggestions": true,
+    // 启用自动换行
+    "editor.wordWrap": "on",
+    // 仅在代码片段中启用 Tab 补全
+    "editor.tabCompletion": "onlySnippets",
+    // ===== 文件处理设置 =====
+    // 删除文件末尾多余的新行
+    "files.trimFinalNewlines": true,
+    // 删除行尾空格
+    "files.trimTrailingWhitespace": true,
+    // ===== 终端设置 =====
+    // 设置终端 Tab 宽度
+    "terminal.integrated.tabStopWidth": 4,
+    // ===== Diff 编辑器设置 =====
+    // 在比较时不忽略空格差异
+    "diffEditor.ignoreTrimWhitespace": false,
+    // 启用隐藏未更改区域
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    // 禁用差异计算时间限制
+    "diffEditor.maxComputationTime": 0,
+    // ===== LaTeX 相关设置 =====
+    // LaTeX 文件的默认格式化工具
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    // === LaTeX Workshop 插件设置 ===
+    // 显示右键菜单
+    "latex-workshop.showContextMenu": true,
+    // 启用包的智能补全
+    "latex-workshop.intellisense.package.enabled": true,
+    // 设置输出目录
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    // LaTeX 编译工具配置
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%OUTDIR%/%DOCFILE%"
+            ],
+            "env": {
+                "TEXMFOUTPUT": "%OUTDIR%"
+            }
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "--output-directory=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    // LaTeX 编译链配置
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "PDFLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        },
+        {
+            "name": "LaTeXmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "(xelatex×2 + biber + xelatex×2)",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    // === LaTeX Workshop 高级设置 ===
+    // 使用上次的编译配置
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    // 确保在构建前创建输出目录
+    "latex-workshop.latex.build.mkdir": true,
+    // 构建失败后清理辅助文件
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    // 启用子文件夹清理
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    // 双击时启用反向同步
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    // 禁用错误消息显示
+    "latex-workshop.message.error.show": false,
+    // 禁用警告消息显示
+    "latex-workshop.message.warning.show": false,
+    // 启用构建后的 SyncTeX
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    // 禁用 PDF 查看器的手型光标
+    "latex-workshop.view.pdf.hand": false,
+    // BibTeX 相关设置
+    "latex-workshop.bibtex-format.sort.enabled": true,
+    "latex-workshop.bibtex-format.tab": "4 spaces",
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    // LaTeX 格式化设置
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.formatting.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-y=defaultIndent: '    '",
+        "-m"
+    ],
+    // 需要清理的文件类型
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz",
+        "*/**/*.aux",
+        "*/**/*.bbl",
+        "*/**/*.blg",
+        "*/**/*.idx",
+        "*/**/*.ind",
+        "*/**/*.lof",
+        "*/**/*.lot",
+        "*/**/*.out",
+        "*/**/*.toc",
+        "*/**/*.acn",
+        "*/**/*.acr",
+        "*/**/*.alg",
+        "*/**/*.glg",
+        "*/**/*.glo",
+        "*/**/*.gls",
+        "*/**/*.ist",
+        "*/**/*.fls",
+        "*/**/*.log",
+        "*/**/*.fdb_latexmk",
+        "*/**/*.snm",
+        "*/**/*.nav",
+        "*/**/*.dvi",
+        "*/**/*.synctex.gz"
+    ],
+    "latex-workshop.latex.clean.method": "glob",
+    // ===== 拼写检查设置 =====
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "name": "custom-dictionary-user",
+            "path": "~/.cspell/custom-dictionary-user.txt",
+            "addWords": true,
+            "scope": "user"
+        }
+    }
+}
