@@ -1,0 +1,112 @@
+{
+    // ===== 编辑器基础设置 =====
+    // 关闭小地图显示
+    "editor.minimap.enabled": false,
+    // 在行号槽中突出显示当前行
+    "editor.renderLineHighlight": "gutter",
+    // 显示成对括号的指引线
+    "editor.guides.bracketPairs": true,
+    // 在边界处显示空白字符
+    "editor.renderWhitespace": "boundary",
+    // 启用自动换行
+    "editor.wordWrap": "on",
+    // 将代码片段建议置顶显示
+    "editor.snippetSuggestions": "top",
+    // 禁用内联建议
+    "editor.inlineSuggest.suppressSuggestions": true,
+    // 设置代码长度标尺
+    "editor.rulers": [
+        120
+    ],
+    // 设置默认格式化工具为 Ruff
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    // ===== 文件处理设置 =====
+    // 删除行尾空格
+    "files.trimTrailingWhitespace": true,
+    // 排除不需要显示的文件和目录
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.cache": true,
+        "**/.coverage": true,
+        "**/.coverage.*": true,
+        "**/.hypothesis": true,
+        "**/.mypy_cache": true,
+        "**/.nox": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/.tox": true
+    },
+    // ===== 语言特定设置 =====
+    // Python 相关设置
+    "[python]": {
+        // 保存时自动格式化
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            // "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        },
+        // 使用 Ruff 作为格式化工具
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    // JSONC 相关设置
+    "[jsonc]": {
+        // 使用 VSCode 内置 JSON 格式化工具
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // ===== Python 分析和自动完成设置 =====
+    // 启用自动导入补全
+    "python.analysis.autoImportCompletions": true,
+    // 设置诊断模式为工作区
+    "python.analysis.diagnosticMode": "workspace",
+    // 自动补全函数括号
+    "python.analysis.completeFunctionParens": true,
+    // 生成类型注解
+    "python.analysis.generateWithTypeAnnotation": true,
+    // 使用相对导入格式
+    "python.analysis.importFormat": "relative",
+    // 启用完整的语言服务器模式
+    "python.analysis.languageServerMode": "full",
+    // 支持文档字符串模板
+    "python.analysis.supportDocstringTemplate": true,
+    // 支持重构文本
+    "python.analysis.supportRestructuredText": true,
+    // ===== Python 代码提示设置 =====
+    // 显示函数返回类型提示
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    // 显示 pytest 参数提示
+    "python.analysis.inlayHints.pytestParameters": true,
+    // 显示变量类型提示
+    "python.analysis.inlayHints.variableTypes": true,
+    // ===== Python 路径设置 =====
+    // 额外的 Python 分析路径
+    "python.analysis.extraPaths": [
+        "~/miniforge3/envs/spatialcells/lib/python3.12/site-packages/ipykernel",
+        "~/miniforge3/envs/spatialcells/lib/python3.12/site-packages",
+        "${workspaceFolder}",
+        "${workspaceFolder}/spatialcells",
+        "${workspaceFolder}/spatialcells/graph_tool",
+        "${workspaceFolder}/spatialcells/spectral_clustering_algorithm"
+    ],
+    // 额外的自动完成路径
+    "python.autoComplete.extraPaths": [
+        "~/miniforge3/envs/spatialcells/lib/python3.12/site-packages/ipykernel",
+        "~/miniforge3/envs/spatialcells/lib/python3.12/site-packages",
+        "${workspaceFolder}",
+        "${workspaceFolder}/spatialcells",
+        "${workspaceFolder}/spatialcells/graph_tool",
+        "${workspaceFolder}/spatialcells/spectral_clustering_algorithm"
+    ],
+    // ===== Notebook 设置 =====
+    // 启用保存时格式化
+    "notebook.formatOnSave.enabled": true,
+    // 保存时的代码操作
+    "notebook.codeActionsOnSave": {
+        // "notebook.source.fixAll": "explicit",
+        "notebook.source.organizeImports": "explicit"
+    },
+    // ===== 工具特定设置 =====
+    // 禁用 Ruff 的自动修复所有问题
+    "ruff.fixAll": false,
+    // 设置远程端口转发源
+    "remote.autoForwardPortsSource": "hybrid"
+}
